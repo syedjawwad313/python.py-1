@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Class Statistics</h1>
+{% if highest %}
+<div class="alert alert-info">
+    <strong>Highest Scorer:</strong> {{ highest.name }} with {{ highest.total }} marks
+</div>
+{% endif %}
+<h3>Subject Averages</h3>
+<ul class="list-group">
+    {% for subject, avg in zip(subjects, averages) %}
+    <li class="list-group-item">{{ subject }}: {{ "%.2f"|format(avg) }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

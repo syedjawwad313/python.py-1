@@ -1,0 +1,4 @@
+- [x] Update create_statistics_tab to add title frame with icon and professional styling
+- [x] Enhance show_statistics method to include grade distribution, average age, gender distribution, and better formatting
+- [x] Test the statistics tab for professional appearance and functionality
+- [x] Replace text widget in statistics tab with structured Treeview widgets for professional table-like presentation

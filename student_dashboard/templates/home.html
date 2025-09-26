@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to Student Performance Dashboard</h1>
+    <p class="lead">Manage student records efficiently with our comprehensive system.</p>
+    <p>Use the navigation menu or quick links below to add students, view records, search, and analyze statistics.</p>
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <a href="{{ url_for('add_student') }}" class="btn btn-primary btn-lg w-100">Add Student</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ url_for('display_students') }}" class="btn btn-success btn-lg w-100">View Students</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ url_for('search_student') }}" class="btn btn-info btn-lg w-100">Search Student</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ url_for('show_statistics') }}" class="btn btn-warning btn-lg w-100">View Statistics</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

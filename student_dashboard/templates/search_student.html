@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Search Student</h1>
+<form method="post" class="mb-3">
+    <div class="input-group">
+        <input type="number" name="roll_no" class="form-control" placeholder="Enter Roll Number" required>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+{% if student %}
+<div>
+    <h3>Student Details</h3>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Age:</strong> {{ student.age }}</p>
+    <p><strong>Gender:</strong> {{ student.gender }}</p>
+    <p><strong>Marks:</strong></p>
+    <ul>
+        {% for subject, mark in zip(subjects, student.marks) %}
+        <li>{{ subject }}: {{ mark }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Total:</strong> {{ student.total }}</p>
+    <p><strong>Percentage:</strong> {{ "%.2f"|format(student.percentage) }}%</p>
+    <p><strong>Grade:</strong> {{ student.grade }}</p>
+</div>
+{% endif %}
+{% endblock %}

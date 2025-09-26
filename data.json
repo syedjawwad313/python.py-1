@@ -1,0 +1,18 @@
+[
+    {
+        "roll_no": 5643,
+        "name": "zzohaiehje",
+        "age": 54,
+        "gender": "M",
+        "marks": [
+            34.0,
+            43.0,
+            32.0,
+            98.0,
+            89.0
+        ],
+        "total": 296.0,
+        "percentage": 59.199999999999996,
+        "grade": "D"
+    }
+]
