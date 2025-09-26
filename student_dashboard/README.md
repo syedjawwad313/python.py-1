@@ -130,12 +130,12 @@ Alternatively, run directly in terminal:
 python gui.py
 ```
 
-### Running the Web App Version
+### Running the Web App Version (Local)
 
-First, install Flask:
+First, install dependencies:
 
 ```bash
-pip install flask
+pip install -r requirements.txt
 ```
 
 Then run:
@@ -145,6 +145,25 @@ python web_app.py
 ```
 
 The web app will be available at http://localhost:5000
+
+### Deploying to Heroku (Live URL)
+
+To deploy the app to Heroku for a public URL:
+
+1. Install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+2. Login: `heroku login`
+3. Create app: `heroku create your-app-name` (choose a unique name)
+4. Add PostgreSQL (recommended over SQLite for production): `heroku addons:create heroku-postgresql:hobby-dev`
+5. Set environment variables if needed (e.g., for DB config).
+6. Git push: `git push heroku main`
+7. Scale: `heroku ps:scale web=1`
+8. Open: `heroku open`
+
+The app will be live at https://your-app-name.herokuapp.com
+
+**Note**: SQLite works locally but is read-only on Heroku. For full functionality, update database.py to use SQLAlchemy with PostgreSQL URI from `os.environ.get('DATABASE_URL')`.
+
+For free hosting alternatives: Render.com or PythonAnywhere.
 
 ### Installation (if needed)
 
