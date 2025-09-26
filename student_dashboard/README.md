@@ -132,19 +132,38 @@ python gui.py
 
 ### Running the Web App Version (Local)
 
-First, install dependencies:
+First, install dependencies (in your virtual environment or globally):
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Then run:
+#### Running in Terminal (Recommended)
+Open the integrated terminal in VSCode (Ctrl+`) and run:
 
 ```bash
 python web_app.py
 ```
 
-The web app will be available at http://localhost:5000
+The server will start, and the app will be available at http://localhost:5000. Keep the terminal open to keep the server running.
+
+#### Running with Code Runner Extension
+If using the Code Runner extension (install from VSCode Extensions if not already):
+
+1. Open `web_app.py` in VSCode.
+2. Ensure Code Runner is configured to run in terminal:
+   - Press Ctrl+, to open Settings.
+   - Search for "code-runner.runInTerminal".
+   - Check the box to enable "Code-runner: Run In Terminal".
+3. Press Ctrl+Alt+N (or right-click > "Run Code").
+   - The Flask server will start in the integrated terminal.
+   - Open http://localhost:5000 in your browser to access the app.
+4. If it doesn't start or shows errors:
+   - Check the terminal output for issues (e.g., missing dependencies—run `pip install -r requirements.txt` in terminal first).
+   - Ensure your virtual environment (.venv) is activated: In terminal, run `.\.venv\Scripts\Activate.ps1` (PowerShell) or `.\.venv\Scripts\activate` (cmd).
+   - Code Runner may not activate the venv automatically; run the command manually in terminal for best results.
+
+**Note**: Flask development server runs continuously; stop with Ctrl+C in terminal.
 
 ### Deploying to Heroku (Live URL)
 
